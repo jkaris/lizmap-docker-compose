@@ -64,10 +64,17 @@ services:
       - { type: bind, source: "${LIZMAP_DIR}/var/log/nginx", target: /var/log/nginx }
       - { type: bind, source: "${LIZMAP_DIR}/var/nginx-cache", target: /var/cache/nginx }
       - { type: bind, source: "${LIZMAP_DIR}", target: /srv/lizmap }
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www/:/var/www/certbot/:ro
     ports:
       - ${LIZMAP_PORT}:8080
     depends_on:
       - lizmap
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
   postgis:
     image: 3liz/postgis:${POSTGIS_VERSION}
     volumes:
