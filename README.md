@@ -9,10 +9,10 @@ Run a complete Lizmap stack with test data.
 - PostgreSQL with PostGIS
 - Redis
 
-**Note**: this is a sample configuration for testing Lizmap web client with QGIS and WPS features.
+**Note**: this is a sample configuration for **testing** Lizmap web client with QGIS and WPS features.
 
-❗**If you want to use it on a production server, you will need to make adjustments to meet your
-production requirements.**
+❗**The current configuration may not be as secured as it should be on your server. If you want to use it on a production server, you will need to make adjustments to meet your
+production and security requirements.**
 
 ## 🚀 Try Lizmap online in one click (no install)
 
